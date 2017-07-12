@@ -45,7 +45,7 @@ app.use(function(req, res, next){
   if(!req.session.user && pathname != '/login'){
 
   if (pathname != '/login'){
-    let qs = '?next=';
+    let qs = pathname != '/login' ? "?next=" + pathname : '';;
   }
     res.redirect('/login' + qs);
   }else{
